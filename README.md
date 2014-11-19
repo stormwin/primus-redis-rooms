@@ -27,6 +27,7 @@ var primus = new Primus(server, {
   redis: {
     host: 'localhost',
     port: 6379,
+    options: {auth_pass: 'pass_key'}, //Optional, defaults to 'null'
     channel: 'primus' // Optional, defaults to `'primus`'
   },
   transformer: 'websockets'
@@ -76,5 +77,3 @@ primus.use('redis', PrimusRedisRooms);
 * Wire format change - data is no longer written to clients as `{ room: "foo",
   data: { our: "bar" } }`, only actual data is sent (`{ our: "bar" }` in this
   case).
-
-
