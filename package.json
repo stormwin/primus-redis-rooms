@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "assert-called": "^0",
-    "primus": "^3",
+    "primus": "^4",
     "ws": "0.8.x"
   },
   "repository": {
