@@ -1,39 +1,38 @@
 {
-  "name": "primus-redis-rooms-withauth",
-  "version": "0.3.3",
-  "description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
-  "dependencies": {
-    "redis": "^2",
-    "redis-sentinel": "^0",
-    "node-uuid": "^1"
-  },
-  "devDependencies": {
-    "assert-called": "^0",
-    "primus": "^5",
-    "ws": "^1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:shaulhpe/primus-redis-rooms.git"
-  },
-  "scripts": {
-    "test": "node test/simple-test.js && node test/lots-of-clients-test.js && node test/room-test.js && node test/one-client-test.js"
-  },
-  "main": "./lib/primus-redis-rooms.js",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/shaulhpe/primus-redis-rooms/issues"
-  },
-  "homepage": "https://github.com/shaulhpe/primus-redis-rooms",
-  "directories": {
-    "test": "test"
-  },
-  "keywords": [
-    "Prius",
-    "redis",
-    "rooms",
-    "with",
-    "authentication"
-  ],
-  "author": "Shaul Hameed"
+	"name": "primus-redis-rooms-withauth",
+	"version": "0.3.3",
+	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
+	"dependencies": {
+		"node-uuid": "1.4.7"
+	},
+	"devDependencies": {
+		"assert-called": "0.1.2-1",
+		"primus": "5.1.0",
+		"ws": "1.1.0",
+		"redis": "2.5.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:shaulhpe/primus-redis-rooms.git"
+	},
+	"scripts": {
+		"test": "node test/simple-test.js && node test/lots-of-clients-test.js && node test/room-test.js && node test/one-client-test.js"
+	},
+	"main": "./lib/primus-redis-rooms.js",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/shaulhpe/primus-redis-rooms/issues"
+	},
+	"homepage": "https://github.com/shaulhpe/primus-redis-rooms",
+	"directories": {
+		"test": "test"
+	},
+	"keywords": [
+		"Prius",
+		"redis",
+		"rooms",
+		"with",
+		"authentication"
+	],
+	"author": "Shaul Hameed"
 }
