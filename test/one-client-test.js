@@ -5,7 +5,7 @@ const assert = require('assert'),
 	getPrimus = require('./helpers/get-primus.js'),
 	PORT = 3459;
 
-let primus, client;
+let primus;
 
 function onConnection(spark) {
 	spark.join('our-room');
@@ -32,7 +32,7 @@ const getClient = (primus) => {
 primus = getPrimus(PORT + 1);
 primus.on('connection', cb(onConnection));
 
-client = getClient(primus);
+getClient(primus);
 
 setTimeout(() => {
 	primus.room('our-room').write({ hello: 'world' });
