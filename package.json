@@ -3,13 +3,15 @@
 	"version": "0.3.3",
 	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
 	"dependencies": {
-		"node-uuid": "1.4.7"
+		"uuid": "^3.3.2"
 	},
 	"devDependencies": {
-		"assert-called": "0.1.2-1",
-		"primus": "5.1.0",
-		"ws": "1.1.0",
-		"redis": "2.5.3"
+		"@types/node": "^10.5.3",
+		"assert-called": "^0.1.2",
+		"eslint": "^5.2.0",
+		"primus": "^7.2.2",
+		"redis": "^2.8.0",
+		"ws": "^6.0.0"
 	},
 	"repository": {
 		"type": "git",
