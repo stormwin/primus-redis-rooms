@@ -1,6 +1,6 @@
 {
 	"name": "primus-redis-rooms-withauth",
-	"version": "0.3.3",
+	"version": "0.4.1",
 	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
 	"dependencies": {
 		"uuid": "^3.3.2"
@@ -15,7 +15,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:shaulhpe/primus-redis-rooms.git"
+		"url": "git@github.com:stormwin/primus-redis-rooms.git"
 	},
 	"scripts": {
 		"test": "node test/simple-test.js && node test/lots-of-clients-test.js && node test/room-test.js && node test/one-client-test.js"
@@ -23,9 +23,9 @@
 	"main": "./lib/primus-redis-rooms.js",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/shaulhpe/primus-redis-rooms/issues"
+		"url": "https://github.com/stormwin/primus-redis-rooms/issues"
 	},
-	"homepage": "https://github.com/shaulhpe/primus-redis-rooms",
+	"homepage": "https://github.com/stormwin/primus-redis-rooms",
 	"directories": {
 		"test": "test"
 	},
