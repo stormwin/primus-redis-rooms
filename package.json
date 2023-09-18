@@ -2,16 +2,13 @@
 	"name": "primus-redis-rooms-withauth",
 	"version": "0.4.1",
 	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
-	"dependencies": {
-		"uuid": "8.3.2"
-	},
 	"devDependencies": {
-		"@types/node": "17.0.38",
+		"@types/node": "20.6.2",
 		"assert-called": "^0.1.2",
-		"eslint": "8.16.0",
-		"primus": "8.0.6",
-		"redis": "4.1.0",
-		"ws": "8.7.0"
+		"eslint": "8.49.0",
+		"primus": "8.0.8",
+		"redis": "4.6.8",
+		"ws": "8.14.1"
 	},
 	"repository": {
 		"type": "git",
@@ -36,5 +33,6 @@
 		"with",
 		"authentication"
 	],
-	"author": "Shaul Hameed"
+	"author": "Shaul Hameed",
+	"packageManager": "yarn@3.6.3"
 }
