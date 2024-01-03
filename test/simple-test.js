@@ -29,16 +29,20 @@ const getClient = (primus) => {
 	}));
 };
 
-primus0 = getPrimus(PORT++);
-primus1 = getPrimus(PORT++);
+const runTest = async () => {
+	primus0 = await getPrimus(PORT++);
+	primus1 = await getPrimus(PORT++);
 
-primus0.on('connection', cb(onConnection));
-primus1.on('connection', cb(onConnection));
+	primus0.on('connection', cb(onConnection));
+	primus1.on('connection', cb(onConnection));
 
-getClient(primus0);
-getClient(primus1);
+	getClient(primus0);
+	getClient(primus1);
 
-setTimeout(() => {
-	primus0.room('our-room').write({ hello: 'world' });
-	primus1.room('our-room').write({ hello: 'world' });
-}, 100);
+	setTimeout(() => {
+		primus0.room('our-room').write({ hello: 'world' });
+		primus1.room('our-room').write({ hello: 'world' });
+	}, 100);
+};
+
+runTest();

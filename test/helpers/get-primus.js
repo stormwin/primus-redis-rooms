@@ -2,15 +2,20 @@
 
 const http = require('http'),
 	Primus = require('primus'),
-	Redis = require('redis'),
+	{ createClient } = require('redis'),
 	PrimusRedisRooms = require('../../lib/primus-redis-rooms.js');
 
-module.exports = (port) => {
+module.exports = async (port) => {
 	const server = http.createServer();
+	const [ redisPub, redisSub ] = await Promise.all([
+		createClient({ host: 'localhost' }).connect(),
+		createClient({ host: 'localhost' }).connect()
+	]);
+
 	let primus = new Primus(server, {
 		redis: {
-			pub: Redis.createClient({ host: 'localhost', port: 6379 }),
-			sub: Redis.createClient({ host: 'localhost', port: 6379 })
+			pub: redisPub,
+			sub: redisSub
 		},
 		transformer: 'websockets'
 	});

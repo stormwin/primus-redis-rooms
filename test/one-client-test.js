@@ -29,11 +29,15 @@ const getClient = (primus) => {
 	return client;
 };
 
-primus = getPrimus(PORT + 1);
-primus.on('connection', cb(onConnection));
+const runTest = async () => {
+	primus = await getPrimus(PORT);
+	primus.on('connection', cb(onConnection));
 
-getClient(primus);
+	getClient(primus);
 
-setTimeout(() => {
-	primus.room('our-room').write({ hello: 'world' });
-}, 100);
+	setTimeout(() => {
+		primus.room('our-room').write({ hello: 'world' });
+	}, 100);
+};
+
+runTest();
