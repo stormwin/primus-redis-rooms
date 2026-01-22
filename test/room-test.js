@@ -1,10 +1,9 @@
-'use strict';
+import assert from 'assert';
+import cb from 'assert-called';
+import getPrimus from './helpers/get-primus.js';
 
-const assert = require('assert'),
-	cb = require('assert-called'),
-	getPrimus = require('./helpers/get-primus.js'),
-	PORT = 3459,
-	ROOM = 'our-room';
+const PORT = 3459;
+const ROOM = 'our-room';
 
 
 const runTest = async () => {

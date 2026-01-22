@@ -1,38 +1,50 @@
 {
 	"name": "primus-redis-rooms-withauth",
-	"version": "0.4.2",
+	"version": "3.0.0",
 	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
+	"type": "module",
+	"exports": {
+		".": "./lib/primus-redis-rooms.js"
+	},
+	"main": "./lib/primus-redis-rooms.js",
+	"engines": {
+		"node": ">=22"
+	},
+	"files": [
+		"lib"
+	],
+	"sideEffects": false,
 	"devDependencies": {
-		"@types/node": "20.10.6",
-		"assert-called": "^0.1.2",
-		"eslint": "8.56.0",
+		"@eslint/js": "9.19.0",
+		"@types/node": "22.19.7",
+		"assert-called": "0.1.2",
+		"eslint": "9.19.0",
+		"globals": "15.14.0",
 		"primus": "8.0.9",
-		"redis": "4.6.12",
-		"ws": "8.16.0"
+		"redis": "5.10.0",
+		"ws": "8.19.0"
 	},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:stormwin/primus-redis-rooms.git"
 	},
 	"scripts": {
-		"test": "node test/simple-test.js && node test/room-test.js && node test/one-client-test.js"
+		"test": "node --test test/*.js",
+		"lint": "eslint lib test",
+		"release": "./scripts/release.sh"
 	},
-	"main": "./lib/primus-redis-rooms.js",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/stormwin/primus-redis-rooms/issues"
 	},
 	"homepage": "https://github.com/stormwin/primus-redis-rooms",
-	"directories": {
-		"test": "test"
-	},
 	"keywords": [
-		"Prius",
+		"Primus",
 		"redis",
 		"rooms",
 		"with",
 		"authentication"
 	],
-	"author": "Shaul Hameed",
-	"packageManager": "yarn@4.0.2"
+	"author": "Vlado Velichkovski",
+	"packageManager": "yarn@4.12.0"
 }

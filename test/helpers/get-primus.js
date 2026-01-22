@@ -1,11 +1,9 @@
-'use strict';
+import http from 'http';
+import Primus from 'primus';
+import { createClient } from 'redis';
+import PrimusRedisRooms from '../../lib/primus-redis-rooms.js';
 
-const http = require('http'),
-	Primus = require('primus'),
-	{ createClient } = require('redis'),
-	PrimusRedisRooms = require('../../lib/primus-redis-rooms.js');
-
-module.exports = async (port) => {
+export default async (port) => {
 	const server = http.createServer();
 	const [ redisPub, redisSub ] = await Promise.all([
 		createClient({ host: 'localhost' }).connect(),

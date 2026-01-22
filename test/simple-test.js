@@ -1,8 +1,6 @@
-'use strict';
-
-const assert = require('assert'),
-	cb = require('assert-called'),
-	getPrimus = require('./helpers/get-primus.js');
+import assert from 'assert';
+import cb from 'assert-called';
+import getPrimus from './helpers/get-primus.js';
 
 let PORT = 3457;
 
