@@ -2,7 +2,7 @@ import assert from 'assert';
 import cb from 'assert-called';
 import getPrimus from './helpers/get-primus.js';
 
-const PORT = 3459;
+const PORT = 11000;
 
 let primus;
 

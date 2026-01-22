@@ -1,6 +1,6 @@
 {
 	"name": "primus-redis-rooms-withauth",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Redis-based room system for Primus with Authentication - Forked from Primus-redis-rooms",
 	"type": "module",
 	"exports": {

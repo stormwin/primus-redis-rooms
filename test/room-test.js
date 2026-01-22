@@ -2,7 +2,7 @@ import assert from 'assert';
 import cb from 'assert-called';
 import getPrimus from './helpers/get-primus.js';
 
-const PORT = 3459;
+const PORT = 12000;
 const ROOM = 'our-room';
 
 
@@ -28,7 +28,7 @@ const runTest = async () => {
 		}));
 
 		room.on('empty', cb(() => {
-			assert.equal(room.sparks.length, 0, 'room should emit `empty` only when empty');
+			assert.equal(room.sparks.size, 0, 'room should emit `empty` only when empty');
 
 			primus.server.close();
 			spark.end();
@@ -37,16 +37,16 @@ const runTest = async () => {
 			process.exit(); // XXX WTF is keeping the process up here?!
 		}));
 
-		assert.equal(spark._rooms[ 0 ], room, 'spark should join room correctly');
-		assert.equal(room.sparks[ 0 ], spark, 'spark should be added to room');
+		assert.equal(spark._rooms[0], room, 'spark should join room correctly');
+		assert.ok(room.sparks.has(spark), 'spark should be added to room');
 
 		spark.join(ROOM);
 		assert.equal(spark._rooms.length, 1, 'spark shouldn\'t be added twice');
-		assert.equal(room.sparks.length, 1, 'spark shoudn\'t be added twice');
+		assert.equal(room.sparks.size, 1, 'spark shoudn\'t be added twice');
 
 		spark.leave(ROOM);
 		assert.equal(spark._rooms.length, 0, 'spark should be removed correctly');
-		assert.equal(room.sparks.length, 0, 'spark should be removed correctly from the room');
+		assert.equal(room.sparks.size, 0, 'spark should be removed correctly from the room');
 	};
 
 	primus.on('connection', cb(onConnected));
